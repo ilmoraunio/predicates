@@ -1,7 +1,9 @@
 (ns predicates)
 
 (defn sum-f [f g x]
-  (+ (f x) (g x)))
+  (+ (f x) (g x))
+  ;; could also be written as 
+  (apply + ((juxt f g) x)))
 
 (defn less-than [n]
   #(< % n))
